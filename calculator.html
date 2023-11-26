@@ -1,0 +1,15 @@
+<script>
+    const operator = prompt("enter the symbole + - / *")
+    const num1 = parseFloat(prompt('enter the number 1'))
+    const num2 =parseFloat(prompt("enter the number 2"))
+    if(operator== "+"){
+        result =num1+num2
+    } else if(operator== "-"){
+        result =num1-num2
+    }else if(operator== "*"){
+        result =num1*num2
+    }else{
+        result =num1/num2
+    }
+    console.log(`${num1} ${operator} ${num2} = ${result}`)
+</script>
