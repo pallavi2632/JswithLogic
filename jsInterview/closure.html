@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body 
+<p>advantage of closure:- funciton curring, hof/hoc, memorize
+    its helps data hiding,and encapsulation</p>
+    <h2>Disadvantage</h2><p>over consumption of memory, those over collection of memory not in garbage collection,
+         it accumulating a lot of memory in our program because thoe variable are not garbage collected till the program
+         expire and it not handle properly by the browser
+    </p>
+    js is hll programming language
+    <h3>Garbage collector is the program on the browser and js engine which kind of frees up the utilize memory</h3>
+ß
+    <!-- <script>
+     
+        first technique
+        
+        
+        function outer(b) {  // ek outer function hai  
+                function inner() { // usek ander inner functon hai
+                    console.log(a, b); // yha pe do argument pass krte hai 
+                }
+                let a = 10; // jha hm value a=10 dete hai
+                return inner; // ab inner ko call krenge
+            }
+            var close= outer("neha"); // ab b ki value assign krenge and store krenge
+          close(); // new varibale pe store krne ke bad use call krenge
+    </script>  -->
+
+    <!-- <script>
+ //second techniquew
+   
+        function outest() { // yha pe ek or function add krte hai 
+            var c = 20; // naya var bna ke 20 value denge
+            function outer(b) {  // ek outer function hai  
+                function inner() { // usek ander inner functon hai
+                    console.log(a, b, c); // yha pe tin argument pass krte hai 
+                }
+                let a = 10; // jha hm value a=10 dete hai
+                return inner; // ab inner ko call krenge
+            }
+            return outer; // yha outer ko call krte hai jo outest ke andar hai
+
+        }
+
+        var close = outest()("neha"); // yha pe ek var k ander outest hai jo outer() function ko call kr rha hai or b=neha show krega
+        close(); // new varibale pe store krne ke bad use call krenge
+
+    </script> -->
+    <!-- third technique its show how to data hiding in closure -->
+    <script>
+        // function counter() {
+        //     var count = 0;  // we have privacy of thi scount
+        //     function incrementData() {
+        //         count++;
+        //     }
+        // }
+        // console.log(count); // it shows the reference error because count var is hide here
+
+        function counter() { // outside function
+            var count = 0;  // we have privacy of this count
+            return function incrementData() { // counter ke ander hi ye function calll hua
+                count++;  // value ko add kiya
+                console.log(count); // log kiya count ko 
+            }
+        }
+        var counter1=counter(); // var ke andar counter() store hua
+        counter1()  // counter1 call krne pe data show hua and print 1
+        counter1() // its print 2 
+    </script>
+</body>
+
+</html>
