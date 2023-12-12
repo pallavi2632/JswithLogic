@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hof</h1>
+    <p>
+        a function which takes another function x() as an argument or returns functions from it is known as higer order
+        functions
+
+        a function which is passed into higer order function is known as the callback funciton
+    </p>
+    <script>
+
+
+        // short form of previous code and better code quality
+        const radius = [3, 5, 2, 6];
+
+        const area = function (radius) { //this is the area logic
+            return Math.PI * radius * radius;
+        }
+
+        // this is the circle
+        const circle = function (radius) {
+            return 2 * Math.PI * radius
+        }
+        const diameter = function (radius) {
+            return 2 * radius;
+        }
+
+
+        // calculate function is the higer order function
+        const calculate = function (radius, logic) { // logic as paramtere
+            const output = [];
+            for (let i = 0; i < radius.length; i++) {
+                output.push(logic(radius[i]));
+            }
+            return output
+        }
+
+
+        // wihtout calculate we can use map function behind the logic map function is used
+        console.log(radius.map(area))
+
+
+        console.log(calculate(radius, area)); // area as an argument insted of logic
+        console.log(calculate(radius, diameter)); // area as an argument insted of logic
+        console.log(calculate(radius, circle)); // area as an argument insted of logic
+
+
+
+        //  for radius
+        //         const radius =[3,5,2,6];
+        //         const calculateArea= function(radius){ // radius var se data lega
+        //             const output =[]; // khali variable jha output ka data store hoga
+        //             for(let i=0; i<radius.length; i++){ // loop for checking element and traversing element
+        //                 output.push(Math.PI* radius[i]*radius[i]);  //2pi r(square)/ r*r // this is formula
+        //             }
+        //             return output // return krega output ko
+        //         }
+        //         console.log(calculateArea(radius)); // log krega result ko
+
+
+        //         // for circle
+
+
+        //         const calculateCirlce= function(radius){ // radius var se data lega
+        //             const output =[]; // khali variable jha output ka data store hoga
+        //             for(let i=0; i<radius.length; i++){ // loop for checking element and traversing element
+        //                 output.push(2*Math.PI* radius[i]);  //2pi*r
+        //             }
+        //             return output // return krega output ko
+        //         }
+        //         console.log(calculateCirlce(radius));
+
+        // // for diameter
+        //         const calculateDiameter= function(radius){ // radius var se data lega
+        //             const output =[]; // khali variable jha output ka data store hoga
+        //             for(let i=0; i<radius.length; i++){ // loop for checking element and traversing element
+        //                 output.push(2*radius[i]);  //2pi*r
+        //             }
+        //             return output // return krega output ko
+        //         }
+        //         console.log(calculateDiameter(radius));
+        // function x() {  // x is the callback funciton
+        //     console.log("normal function")
+        // }
+
+        // function y(x){  // y is the higer order function
+        //     console.log("hoc function called")
+        //     x();  // typerror that x is not a funciton
+        // }
+        // y()
+    </script>
+</body>
+
+</html>
