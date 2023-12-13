@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h4>
+        promises
+    </h4>
+    <p>
+        theree stage is there;- pending, fullfill, rejected
+        <!-- immutable in promises - call just once and pass everywhere u want  -->
+    </p>
+    <h1>Promises is like plceholder which will filled the later of the value</h1>
+    <h1>Promises is like plceholder for a certain period of time until we received a value from a asyncronous operation
+    </h1>
+    <h1>
+        promies is a container for future value
+    </h1>
+    <h1>promies is a object representing the eventual completion or failure of an asyncronous operatioon</h1>
+    <script>
+
+        const cart = ["shoes", "pants", "kurtas"]
+        function createOrder(cart) {
+           const pr =new Promise(function(reolve, reject){
+            if(!validateCart(cart)){
+                const err=new Error("cart is not valid");
+                reject(err);
+            }
+           })
+           return pr
+        }
+        // const GITHUB_URl ="https://docs.github.com/en/rest/users?apiVersion=2022-11-28"
+        // const user=fetch(GITHUB_URl);
+        // console.log(user)
+        // const cart = ["shoes", "pants", "kurtas"]
+
+        // createOrder(cart, function (porderId) {
+        //     proceedToPayment(orderId);
+        // })
+        // createOrder(cart);   // this function is inverstion control in callback issue
+        // promises remove this error
+        //const promise = createOrder(cart) //it will return as promise
+
+
+        //in promise i will attached funciton withp promise and callback
+
+        // promise.then
+        // createOrder(cart, function (porderId) {
+        //     proceedToPayment(orderId);
+        // })
+
+    </script>
+</body>
+
+</html>
