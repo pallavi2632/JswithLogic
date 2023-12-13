@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async & await in promise</h1>
+    <p>async return a promise</p>
+    <p>async and await combo are used to handle promises</p>
+
+    <script>
+
+
+
+// <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga jaise 10 sec ke bad sb print krega line 25 ko chhod ke qki 5 sec bhi 10 sec ke andar aata hai---->
+    const q =new Promise((resolve, reject)=>{ 
+            setTimeout(()=>{
+                resolve("hello my name is supriya")  // yha pe kuch second bad ye code print hota
+            },10000)  ///agr value kam krenge to noraml jo kam hai usko print krne k bad jada wala krega
+              });
+
+              const q1 =new Promise((resolve, reject)=>{ 
+            setTimeout(()=>{
+                resolve("hello my name is supriya")  // yha pe kuch second bad ye code print hota
+            },5000)
+              });
+              async function handlePromise(){  //async await is basically actually waits at that point of the time waits
+                // js engine was waiting for promise to resolved..///// once the promise is resolved
+                console.log("waiting other thing")
+
+                const val =await q; 
+                console.log("hello winii")
+                console.log(val)
+                //  new var
+               const val2= await q1;
+               console.log("waiting myself")  // jo line hai esme mile hai 5sec lekin ye 10 sec ke bad hi print hoga
+               console.log(val2)
+              }
+          handlePromise()
+
+   // <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga jaise 10 sec ke bad sb print krega line 25 ko chhod ke----->
+
+
+// <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga jaise 10 sec ke bad sb print krega line 25 ko chhod ke---->
+    // const q =new Promise((resolve, reject)=>{ 
+    //         setTimeout(()=>{
+    //             resolve("hello my name is supriya")  // yha pe kuch second bad ye code print hota
+    //         },10000)
+    //           });
+
+    //           async function handlePromise(){  //async await is basically actually waits at that point of the time waits
+    //             // js engine was waiting for promise to resolved..///// once the promise is resolved
+    //             console.log("waiting other thing")
+
+    //             const val =await q; 
+    //             console.log("hello winii")
+    //             console.log(val)
+    //             //  new var
+    //            const val2= await q;
+    //            console.log("waiting myself")
+    //            console.log(val2)
+    //           }
+    //       handlePromise()
+
+   // <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga jaise 10 sec ke bad sb print krega line 25 ko chhod ke----->
+
+
+
+        //after promise    // <-----we will use await keyword infront of promise that has to be resolved it----->  // 
+        // const p =new Promise((resolve, reject)=>{  //this p is promise
+        //   resolve("hello my name is supriya")
+        //       })
+        //       async function handlePromise(){
+        //         const val =await p; // await is the keyword that can only be used to inside an async function
+        //         console.log(val)
+        //       }
+        //   handlePromise()
+
+
+
+                   // <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga----->
+        //   const q =new Promise((resolve, reject)=>{ 
+        //     setTimeout(()=>{
+        //         resolve("hello my name is supriya")  // yha pe kuch second bad ye code print hota
+        //     },10000)
+        //       });
+
+        //       async function handlePromise(){  //async await is basically actually waits at that point of the time waits
+        //         // js engine was waiting for promise to resolved..///// once the promise is resolved
+        //         const val =await q; 
+        //         console.log(val)
+        //         console.log("hello winii")
+        //       }
+        //   handlePromise()
+   // <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga qki ye usi async function k andar call hua hai----->
+
+
+// before async await  
+
+        // const a =new Promise((resolve, reject)=>{
+        //   resolve("hello my name is supriya")
+        //       })
+
+        //      function getData(){
+        //            p.then((res)=>console.log(res));
+        //            }
+
+        //           getData();
+
+                  //////////
+
+
+
+    // async function getData(){
+    //     return "select"
+      
+    // }
+    // const data= getData();
+    // console.log(data);
+        </script>
+</body>
+</html>
