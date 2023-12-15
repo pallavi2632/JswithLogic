@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>fetch function : you make an API call function and fetch gives you a promise for handling we use async await
+    </h1>
+    <p>fetch().then(res=>res.json()).then(res=> console.log())</p>
+    <script>
+
+        const API_URL = "https://api.github.com/users/supriya224"
+
+        async function handlePromise() {  // firstly it will suspend at this time itself and 
+            // handlePromise() function execution will resume after this fetch call has been successfully fullfill
+            const data = await fetch(API_URL)   // ye data var me store ho ke await ke throgh handle hoga
+            //   fetch returns a response
+            const jsonValue = await data.json() //response data is here and convert body into json 
+            
+            
+            console.log(jsonValue)
+
+            // fetch ()=>Response.json()=> jsonValue
+            //response is a promise and its gives u a value or result
+        }
+        handlePromise()
+
+    </script>
+</body>
+
+</html>

@@ -9,7 +9,12 @@
     <h1>Async & await in promise</h1>
     <p>async return a promise</p>
     <p>async and await combo are used to handle promises</p>
+  <!-- agr handle function jaise chije hai niche me to susopend ho jayega tb tk jb tk ek async ni chl jata jb ek chlega tb next chlega
+condition hogi ki phle 5sec tb 10sec tb funciton sucpend hoga ni to
+agr 10sec phle or 5sec bad me hai to varibale q phle suspend hoga qki 10sec bad hi print hona hai bhle hi bad me
+ 5sec ho lekin agr phle async ko 10sec mila hai to wo utna itme lgega hi lega or sath me print krega 10sec ke value ko or 5 sec  k value ko -->
 
+ <!-- call stack is something wich can not be block -->
     <script>
 
 
@@ -19,6 +24,8 @@
             setTimeout(()=>{
                 resolve("hello my name is supriya")  // yha pe kuch second bad ye code print hota
             },10000)  ///agr value kam krenge to noraml jo kam hai usko print krne k bad jada wala krega
+            // lekin agr eski value jada hogi to phle 10sec ya++sec krega fir kam wala krega
+
               });
 
               const q1 =new Promise((resolve, reject)=>{ 
@@ -38,7 +45,8 @@
                console.log("waiting myself")  // jo line hai esme mile hai 5sec lekin ye 10 sec ke bad hi print hoga
                console.log(val2)
               }
-          handlePromise()
+          handlePromise() //// pure ko 10sec bad hi print krega
+
 
    // <-----yha pe kuch alg atrika hai jaise dono console.log ek sath print hoga jaise 10 sec ke bad sb print krega line 25 ko chhod ke----->
 
