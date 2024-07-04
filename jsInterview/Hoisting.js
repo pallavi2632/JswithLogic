@@ -14,3 +14,10 @@ variable=10; //undefind
 console.log(foo) //100
 console.log(variable) //20
 var variable=30; //30
+
+
+
+
+
+
+
